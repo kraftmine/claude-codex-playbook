@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Personal overrides (local-only notes if anyone forks and uses this)
+CLAUDE.local.md
+*.local.md
+
+# Editor
+.vscode/
+.idea/
+*.swp
