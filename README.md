@@ -2,7 +2,7 @@
 
 A small, opinionated playbook for working with Claude Code and Codex as paired coding agents — without drifting into kitchen-sink monoliths, untracked git work, or methodology bloat.
 
-**Status:** v1 frozen on `2026-05-03`. Authored from the lessons of a real production refactor (Wild Kamchatka dashboard). To be revised after three real uses.
+**Status:** v1.1.0 — `2026-05-03`. Authored from the lessons of a real production refactor (Wild Kamchatka dashboard). To be revised after real-use feedback. See [`CHANGELOG.md`](CHANGELOG.md) for history and [`GOVERNANCE.md`](GOVERNANCE.md) for how this playbook changes.
 
 **Author:** [Konstantin Gordon](https://github.com/kraftmine), with synthesis from Claude Code (Anthropic) and Codex (OpenAI).
 
@@ -75,28 +75,19 @@ This split is directly modeled on Anthropic's [orchestrator-workers pattern](htt
 - [`CLAUDE_CODE_REVIEW.md`](CLAUDE_CODE_REVIEW.md) — Claude Code's review of the initial draft, surfacing four required gaps.
 - [`EXTERNAL_RESEARCH_FINDINGS.md`](EXTERNAL_RESEARCH_FINDINGS.md) — survey of existing AI-agent playbooks (Anthropic, HumanLayer, AGENTS.md, 12-factor agents, smartwhale8/claude-playbook). What we adopted, what we rejected.
 
+### Maintenance
+- [`GOVERNANCE.md`](GOVERNANCE.md) — how this playbook changes, file ownership rules, versioning, conflict resolution.
+- [`CHANGELOG.md`](CHANGELOG.md) — version history.
+
 ## How To Use This Playbook
 
-For a practical step-by-step setup guide, start with [`HOW_TO_USE.md`](HOW_TO_USE.md).
+**If you are a human reading this** — this README is your entry point. The Risk-Based Operating Model and Operating Model sections above are the core. The rest is detail.
 
-### If you are Konstantin
-Use it on the next real task. Treat the rules as defaults, not absolutes. After three real uses, run a short retrospective: what prevented a mistake, what slowed work down, what repeated enough to deserve a hook or skill.
+**If you are activating this in a project (or asking your AI agent to)** — see [`HOW_TO_USE.md`](HOW_TO_USE.md) for the technical setup, including a copy-paste prompt for handing the playbook to Claude Code, Codex, or another agent.
 
-### If you found this repo
-You are welcome to copy, fork, or adapt anything here. The playbook is shaped by one specific founder + agent setup; your context is different. Take what fits.
+**If you forked this for your own context** — start with `AI_WORKING_RULES.md`, `WORKFLOW.md`, and `LESSONS_FROM_WK.md`. Keep what fits, drop what doesn't. Most reusable: the risk-based scaling model, the named lessons (mostly universal), the handoff contract, the CLAUDE.md size discipline.
 
-The most reusable pieces are likely:
-- the **risk-based scaling** model
-- the **named lessons from Wild Kamchatka** (most are universal)
-- the **handoff contract** in `WORKFLOW.md`
-- the **CLAUDE.md size discipline** (under 80 lines, under 60 if possible)
-
-The least reusable: anything specific to Wild Kamchatka deploy mechanics, the kraftmine GitHub username, the Indonesian/Russian operational context.
-
-### If you are an AI agent landing in this repo
-Read in this order: `README.md` -> `HOW_TO_USE.md` -> `AI_WORKING_RULES.md` -> `WORKFLOW.md` -> `PROJECT_TEMPLATE.md`.
-
-If the user asks you to activate this workflow in a project, create or update the minimal project-local entrypoints (`AGENTS.md`, short `CLAUDE.md` when relevant, and `.planning/` folders). Do not copy the whole playbook into the project by default.
+**Wild Kamchatka users** — this playbook was first activated on the WK dashboard. After three real uses, we run a retrospective: what prevented a mistake, what slowed work down, what repeated enough to deserve a hook or skill.
 
 ## Open Questions
 
