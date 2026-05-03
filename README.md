@@ -77,6 +77,8 @@ This split is directly modeled on Anthropic's [orchestrator-workers pattern](htt
 
 ## How To Use This Playbook
 
+For a practical step-by-step setup guide, start with [`HOW_TO_USE.md`](HOW_TO_USE.md).
+
 ### If you are Konstantin
 Use it on the next real task. Treat the rules as defaults, not absolutes. After three real uses, run a short retrospective: what prevented a mistake, what slowed work down, what repeated enough to deserve a hook or skill.
 
@@ -92,7 +94,9 @@ The most reusable pieces are likely:
 The least reusable: anything specific to Wild Kamchatka deploy mechanics, the kraftmine GitHub username, the Indonesian/Russian operational context.
 
 ### If you are an AI agent landing in this repo
-Read in this order: `AI_WORKING_RULES.md` → `WORKFLOW.md` → `LESSONS_FROM_WK.md`. The other documents are supporting context.
+Read in this order: `README.md` -> `HOW_TO_USE.md` -> `AI_WORKING_RULES.md` -> `WORKFLOW.md` -> `PROJECT_TEMPLATE.md`.
+
+If the user asks you to activate this workflow in a project, create or update the minimal project-local entrypoints (`AGENTS.md`, short `CLAUDE.md` when relevant, and `.planning/` folders). Do not copy the whole playbook into the project by default.
 
 ## Open Questions
 
