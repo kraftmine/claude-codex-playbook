@@ -2,7 +2,7 @@
 
 A small, opinionated playbook for working with Claude Code and Codex as paired coding agents — without drifting into kitchen-sink monoliths, untracked git work, or methodology bloat.
 
-**Status:** v1.2.2 — `2026-05-06`. Authored from the lessons of a real production refactor (Wild Kamchatka dashboard). To be revised after real-use feedback. See [`CHANGELOG.md`](CHANGELOG.md) for history and [`GOVERNANCE.md`](GOVERNANCE.md) for how this playbook changes.
+**Status:** v1.3.0 — `2026-05-06`. Authored from the lessons of a real production refactor (Wild Kamchatka dashboard). To be revised after real-use feedback. See [`CHANGELOG.md`](CHANGELOG.md) for history and [`GOVERNANCE.md`](GOVERNANCE.md) for how this playbook changes.
 
 **Author:** [@kraftmine](https://github.com/kraftmine), with synthesis from Claude Code (Anthropic) and Codex (OpenAI).
 
@@ -65,12 +65,16 @@ This split is directly modeled on Anthropic's [orchestrator-workers pattern](htt
 - [`LESSONS_FROM_WK.md`](LESSONS_FROM_WK.md) — 11 concrete failures from Wild Kamchatka with cause, rule, and preventive check for each.
 
 ### Workflow & Templates
-- [`WORKFLOW.md`](WORKFLOW.md) — roles, default loop, Writer/Reviewer pattern, handoff contract, deploy loop.
-- [`PROJECT_TEMPLATE.md`](PROJECT_TEMPLATE.md) — minimal per-project context with day 0 file requirements (`CLAUDE.md` short, `AGENTS.md` for commands).
+- [`WORKFLOW.md`](WORKFLOW.md) — roles, default loop, Writer/Reviewer pattern, handoff contract, deploy loop, new-feature discovery interview.
+- [`PROJECT_TEMPLATE.md`](PROJECT_TEMPLATE.md) — minimal per-project context with day 0 file requirements (`CLAUDE.md` short, `AGENTS.md` for commands), plus a dashboards/business-tools subsection.
 
 ### Playbooks
 - [`PLAYBOOK_CHECKPOINT.md`](PLAYBOOK_CHECKPOINT.md) — short procedure before risky operations.
 - [`PLAYBOOK_DEPLOY.md`](PLAYBOOK_DEPLOY.md) — deployment safety checklist.
+- [`PLAYBOOK_DEBUG.md`](PLAYBOOK_DEBUG.md) — root-cause debugging protocol (reproduce → one hypothesis at a time → smallest fix at root → verify).
+
+### For Non-Engineer Project Owners
+- [`WORKING_WITH_AGENTS.md`](WORKING_WITH_AGENTS.md) — pocket guide for the human driver: risk levels in plain language, how to read agent reports, when to say stop, what only you decide.
 
 ### How This Came Together (working history)
 - [`CODEX_SYNTHESIS.md`](CODEX_SYNTHESIS.md) — Codex's position on keeping the system small.
@@ -110,5 +114,5 @@ To be answered or removed after three real uses:
 ## Acknowledgements
 
 - The lessons in this playbook come from a real production refactor sequence on the Wild Kamchatka operations dashboard, where the original authors hit every monolith / git / mutable-global trap themselves.
-- Direct external influences: [Anthropic's Claude Code best practices](https://code.claude.com/docs/en/best-practices), [HumanLayer's "Writing a good CLAUDE.md"](https://www.humanlayer.dev/blog/writing-a-good-claude-md), [the AGENTS.md convention](https://agents.md/), [12-factor agents](https://github.com/humanlayer/12-factor-agents), [smartwhale8/claude-playbook](https://github.com/smartwhale8/claude-playbook).
-- Indirect influences: Andrej Karpathy's coding rules, Addy Osmani's agent-skills, obra/superpowers methodology.
+- Direct external influences: [Anthropic's Claude Code best practices](https://code.claude.com/docs/en/best-practices), [HumanLayer's "Writing a good CLAUDE.md"](https://www.humanlayer.dev/blog/writing-a-good-claude-md), [the AGENTS.md convention](https://agents.md/), [12-factor agents](https://github.com/humanlayer/12-factor-agents), [smartwhale8/claude-playbook](https://github.com/smartwhale8/claude-playbook), [obra/superpowers](https://github.com/obra/superpowers) (MIT) — adapted principles for brainstorming-before-code and systematic debugging, captured in our own voice rather than vendored.
+- Indirect influences: Andrej Karpathy's coding rules, Addy Osmani's agent-skills.

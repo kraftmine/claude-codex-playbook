@@ -152,3 +152,55 @@ Use ADRs for high-risk or expensive-to-reverse choices:
 - auth, permissions, finance, inventory, or deploy behavior
 
 Use short decision notes for medium-risk choices that future agents should not rediscover.
+
+## Dashboards And Business Tools
+
+Internal dashboards and operational business tools (the most common project shape for non-engineer founders) share a recurring set of starter facts worth capturing on day 0. If your project is a dashboard, finance tool, CRM, inventory system, or ops console, fill in this subsection in addition to the generic sections above.
+
+### Roles And Their Views
+
+List every role that uses the system, and the shape of UI each one sees:
+
+- 
+
+For each role, note: what they can read, what they can write, what is hidden from them, and which screens are role-specific vs. shared.
+
+### Private And Customer Data
+
+Data the system handles that has legal, financial, or trust weight:
+
+- 
+
+Mark which of these must never appear in logs, error messages, screenshots, or unencrypted backups.
+
+### Financial / Customer-Facing Actions
+
+Actions that move money, change stock, send a message to a customer, or commit to a delivery:
+
+- 
+
+These actions require explicit user confirmation before the agent triggers them programmatically. Never auto-fire.
+
+### Metrics And Reports
+
+Numbers shown on dashboards. For each one, name:
+
+- 
+
+The formula (in plain language), the source of truth (which table, which calculation), and how stale the displayed value can be before it is misleading.
+
+### Source Of Truth
+
+For each piece of operational data, name where it lives:
+
+- 
+
+If a value is shown in two places, only one is the source of truth and the other is derived. Do not allow two writeable versions of the same number.
+
+### Deploy Expectations
+
+Who deploys, how often, and what counts as a "safe" deploy window for the customers using the tool:
+
+- 
+
+If the tool is used live during business hours, deploy is a higher-risk operation than a generic web app deploy.

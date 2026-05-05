@@ -141,16 +141,39 @@ When Codex reports back, the report should include:
 
 For larger features, Claude Code should interview the user before writing a spec.
 
-The interview should focus on non-obvious questions:
+This is the single most leveraged step in the workflow. Half of all rework comes from skipping it. The non-engineer user often describes a feature at the UI layer ("a button that does X") when the real questions are about data, roles, and edge cases. The interview surfaces those before code is written.
 
-- roles and permissions
-- money/stock/data consequences
-- edge cases
-- manual workflow
-- what would make the feature feel broken
-- what can be deferred
+### When required
 
-Do not interview for trivial fixes.
+- new feature touching more than one screen
+- new feature touching money, stock, customers, audit log, or auth
+- a workflow change visible to more than one role
+- a feature where "broken" would be expensive (financial loss, lost data, lost trust)
+
+### When skipped
+
+- typo fixes, copy edits, small UI tweaks
+- bugfixes with a known scope
+- single-screen tweaks that do not touch shared data
+
+### Required questions before code
+
+Cover all of these. Stop and ask if any are unclear:
+
+1. **Users and roles** — who triggers this? Which role(s) see what? Is there an admin/owner view that differs from operator/seller?
+2. **Data** — what gets created, read, updated, or deleted? Is any of it money, stock, customer, or audit-trail data?
+3. **Screens** — which screens are affected? Is the same concept already rendered somewhere else, by another role? (See `LESSONS_FROM_WK.md` Lesson 13 — do not silently fork.)
+4. **Permissions** — who can do this and who must not be able to do this?
+5. **Edge cases** — what happens with empty input, partial input, duplicates, two users acting at the same time, offline state?
+6. **What would feel broken** — describe the failure mode in plain language. ("If a seller submitted twice, would the customer be charged twice?")
+7. **What can be deferred** — is there a smaller version of this that is still useful? What is the must-have vs. nice-to-have split?
+8. **Manual workflow today** — how does the user do this without the feature? Sometimes the answer reveals the feature is the wrong solution.
+
+### Approval to proceed
+
+After the interview, the agent writes a short spec or plan that captures the answers. The user confirms before code starts. The spec lives in the active project's `.planning/coordination/` folder.
+
+Trivial fixes do not require this loop. When in doubt, do the interview — five minutes of questions saves an hour of rework.
 
 ## Deploy Loop
 

@@ -4,6 +4,25 @@ This file tracks meaningful changes to the playbook.
 
 For governance and update process, see [`GOVERNANCE.md`](GOVERNANCE.md).
 
+## v1.3.0 — 2026-05-06
+
+Added.
+
+- `WORKING_WITH_AGENTS.md` — pocket guide for non-engineer project owners. Plain-language coverage of risk levels, how to read agent reports, when to say "stop, slow down," what only the user decides, what they do not need to track. This is the user-facing companion to `AI_WORKING_RULES.md` (which is agent-facing).
+- `PLAYBOOK_DEBUG.md` — root-cause debugging protocol borrowed in spirit from Superpowers' `systematic-debugging`, written in our own voice. Reproduce → read error → inspect recent changes → one hypothesis at a time → smallest fix at root cause → verify symptom is gone. Anti-patterns named (stab-and-pray, symptom suppression, premature refactor, patching one fork).
+
+Changed.
+
+- `WORKFLOW.md` "New Feature Discovery" — promoted from a one-line note to a full section with eight required questions (users/roles, data, screens, permissions, edge cases, what would feel broken, what can be deferred, manual workflow today), explicit "when required" / "when skipped" criteria, and approval-to-proceed loop. Cross-references Lesson 13.
+- `PROJECT_TEMPLATE.md` — added a "Dashboards And Business Tools" subsection covering the recurring starter facts for internal dashboards / finance tools / CRMs / inventory systems: roles and their views, private/customer data, financial/customer-facing actions, metrics with formulas and source of truth, deploy expectations.
+- `README.md` — Acknowledgements now name `obra/superpowers` (MIT) explicitly as an adapted-principles influence; removed it from "indirect influences" since it is now directly named in the playbook content. Documents section updated to list `WORKING_WITH_AGENTS.md` and `PLAYBOOK_DEBUG.md`.
+
+Process.
+
+- Followed the Writer/Reviewer Loop end-to-end. Codex wrote the original v1.3 position (`CODEX_POSITION_SUPERPOWERS_INTEGRATION.md`, 2026-05-04) proposing a layered model with three new files plus a `templates/beginner-dashboard/` folder. Claude Code wrote a counter-position (`CLAUDE_POSITION_SUPERPOWERS_INTEGRATION.md`, 2026-05-05) arguing for a smaller scope agnostic to Superpowers. Codex converged on the smaller scope (`CODEX_RESPONSE_SUPERPOWERS_INTEGRATION.md`, 2026-05-06), pulling in one item from his original list — a dashboards subsection in the existing `PROJECT_TEMPLATE.md` rather than a new templates folder — which Claude Code had already named as the acceptable compromise.
+- Final scope: 2 new files + 3 surgical edits, agnostic to any third-party plugin API, no template folders, Superpowers named in acknowledgements only.
+- `PROPOSAL_v1_3.md` records the converged scope as the canonical change record.
+
 ## v1.2.2 — 2026-05-06
 
 Added.
