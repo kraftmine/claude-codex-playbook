@@ -4,6 +4,17 @@ This file tracks meaningful changes to the playbook.
 
 For governance and update process, see [`GOVERNANCE.md`](GOVERNANCE.md).
 
+## v1.2.1 — 2026-05-03
+
+Added.
+
+- `LESSONS_FROM_WK.md` Lesson 12 — localStorage Cannot Be A Source Of Truth For Server State. Sourced from the Wild Kamchatka hotfix chain retrospective (`~/wild-kamchatka-dashboard/.planning/reviews/REVIEW_HOTFIX_SERIES_2026-05-01_to_2026-05-03.md`). No approval required per `GOVERNANCE.md` lesson-addition rule.
+- Cross-reference between Lesson 2 (role-shared data, visibility side) and Lesson 12 (creation side) so both lessons strengthen each other.
+
+Process.
+
+- Brief from Claude Code (`CODEX_BRIEF_LESSON_12.md`) frozen as working history alongside the lesson.
+
 ## v1.2.0 — 2026-05-03
 
 Workflow refinements (earned by first real activation in Wild Kamchatka).

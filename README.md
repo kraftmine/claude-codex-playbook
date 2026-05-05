@@ -2,7 +2,7 @@
 
 A small, opinionated playbook for working with Claude Code and Codex as paired coding agents — without drifting into kitchen-sink monoliths, untracked git work, or methodology bloat.
 
-**Status:** v1.2.0 — `2026-05-03`. Authored from the lessons of a real production refactor (Wild Kamchatka dashboard). To be revised after real-use feedback. See [`CHANGELOG.md`](CHANGELOG.md) for history and [`GOVERNANCE.md`](GOVERNANCE.md) for how this playbook changes.
+**Status:** v1.2.1 — `2026-05-03`. Authored from the lessons of a real production refactor (Wild Kamchatka dashboard). To be revised after real-use feedback. See [`CHANGELOG.md`](CHANGELOG.md) for history and [`GOVERNANCE.md`](GOVERNANCE.md) for how this playbook changes.
 
 **Author:** [@kraftmine](https://github.com/kraftmine), with synthesis from Claude Code (Anthropic) and Codex (OpenAI).
 

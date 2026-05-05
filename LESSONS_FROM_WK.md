@@ -46,6 +46,8 @@ Preventive check:
 
 - Ask: "Who else needs to see this data, and from where?"
 
+See also: Lesson 12 — the creation-side variant (gating server-state writes on `localStorage` flags re-fires on every fresh device).
+
 ## Lesson 3: Hidden UI Is Often Experienced As Broken
 
 What happened:
@@ -211,3 +213,27 @@ Rule:
 Preventive check:
 
 - Ask: "Are we learning something new, or circling the same failure pattern?"
+
+## Lesson 12: localStorage Cannot Be A Source Of Truth For Server State
+
+What happened:
+
+- A `useEffect` checked `localStorage["wk_last_audit_date"]` to decide whether to auto-create three inventory audits.
+- Fresh devices had no entry, so the effect ran on first login and created phantom audits.
+- After 54 legacy audit rows were deleted from Supabase, the next user who logged in on a new phone re-created them.
+
+Why it matters:
+
+- `localStorage` is per-browser, per-device. Anything gated on `localStorage` will fire on every fresh device login, regardless of whether the corresponding server-side state already exists.
+- This is a class of bug, not a one-off: any feature gated by browser-local memory will leak through onboarding flows, multi-device users, incognito sessions, and cleared caches.
+
+Rule:
+
+- Do not gate the creation of shared server state on `localStorage` checks.
+- If a feature needs "do this once," derive that from the server state directly (does the row already exist?), or remove the auto-creation entirely and require an explicit user action.
+
+Preventive check:
+
+- When reviewing any `useEffect` that creates rows in Supabase or other shared storage, ask: "What happens on a fresh browser/device with empty localStorage? Will this run again? Will it duplicate state?"
+
+See also: Lesson 2 — same family (browser-local state vs. shared truth), different angle (Lesson 2 is about *visibility* across roles, Lesson 12 is about *creation* of shared state being gated by per-device memory).
