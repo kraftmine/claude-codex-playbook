@@ -1,13 +1,13 @@
 # Current Batch — Playbook Work
 
-Date: `2026-05-03`
-Latest released version: **v1.2.1** (Lesson 12 added on top of v1.2.0)
+Date: `2026-05-06`
+Latest released version: **v1.2.2** (Lesson 13 added on top of v1.2.1)
 
 ## Where we are
 
-The playbook is **shipped at v1.2.1** and live on GitHub: `https://github.com/kraftmine/claude-codex-playbook`.
+The playbook is **shipped at v1.2.2** and live on GitHub: `https://github.com/kraftmine/claude-codex-playbook`.
 
-No version is currently in flight. v1.2.0 (workflow refinements + genericization) and v1.2.1 (Lesson 12 — localStorage cannot be a source of truth for server state) are both merged and pushed to `main`.
+No version is currently in flight. v1.2.0 (workflow refinements + genericization), v1.2.1 (Lesson 12 — localStorage cannot be a source of truth for server state), and v1.2.2 (Lesson 13 — forked implementations of the same concept drift apart) are all merged and pushed to `main`.
 
 ## What's queued
 
@@ -68,3 +68,4 @@ This file (`CURRENT_BATCH.md`) is a pointer to active work, not a copy of the wo
 
 - 2026-05-03 — v1.2.0 pushed (workflow refinements + genericization).
 - 2026-05-03 — v1.2.1 pushed (Lesson 12).
+- 2026-05-06 — v1.2.2 pushed (Lesson 13).

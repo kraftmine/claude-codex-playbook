@@ -237,3 +237,32 @@ Preventive check:
 - When reviewing any `useEffect` that creates rows in Supabase or other shared storage, ask: "What happens on a fresh browser/device with empty localStorage? Will this run again? Will it duplicate state?"
 
 See also: Lesson 2 — same family (browser-local state vs. shared truth), different angle (Lesson 2 is about *visibility* across roles, Lesson 12 is about *creation* of shared state being gated by per-device memory).
+
+## Lesson 13: Forked Implementations Of The Same Concept Drift Apart
+
+What happened:
+
+- Warehouse browsing was implemented two different ways: in the owner's view, the UI had a cross-warehouse toggle; in Marina's view, the UI was a drill-in with per-warehouse tabs. Same underlying domain concept, two divergent code paths.
+- "New sale" entry was implemented differently in Marina's view and in the sellers' view (the cart shape, validation, and submission path drifted between them).
+- Each fork carried its own bugs. Fixes patched one path while the other path kept the bug. UX drifted between roles because nobody was tracking the divergence.
+
+Why it matters:
+
+- Forked implementations of the same domain concept silently diverge over time. Bugfixes land in one path and not the other. Tests, if any, cover one variant.
+- Refactoring later becomes O(N) on the number of forks instead of O(1) on a shared module.
+- A non-engineer using the system sees inconsistent behavior between roles and assumes "it just works that way" — when in fact two pieces of code are quietly fighting each other.
+
+Rule:
+
+- Before implementing a screen, hook, or function for a domain concept (warehouse, order, sale, expense, client), search the codebase for existing implementations of the same concept first.
+- If a similar implementation already exists with a different shape, do **not** silently fork. The agent must either:
+  - propose unification — "I see this concept is rendered two ways in X and Y. Recommend extracting a shared module / hook / view, with role-specific props for the legitimate differences."
+  - or explicitly justify the divergence (different role's actual needs, security boundary, performance) and name it as debt with a cleanup trigger.
+- The choice must be surfaced to the user. They should know when they are accepting two-paths-for-now, and why.
+
+Preventive check:
+
+- Before writing a new component or hook for a domain concept, grep for that concept noun and adjacent role names. If another role already has a screen for it, look at that screen first.
+- After implementation, ask: "Does another role have UI for this same concept? Does it behave the same way? If not, is the difference legitimate or accidental?"
+
+See also: Lesson 1 — monoliths hide forks (when both implementations live inside the same `App.jsx`, the duplication is invisible). Lesson 7 — this is exactly the kind of structural drift the agent should flag pre-implementation, not after merge.

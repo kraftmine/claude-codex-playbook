@@ -4,6 +4,17 @@ This file tracks meaningful changes to the playbook.
 
 For governance and update process, see [`GOVERNANCE.md`](GOVERNANCE.md).
 
+## v1.2.2 — 2026-05-06
+
+Added.
+
+- `LESSONS_FROM_WK.md` Lesson 13 — Forked Implementations Of The Same Concept Drift Apart. Sourced from user observation in Wild Kamchatka: warehouse browsing was rendered two ways (owner cross-warehouse toggle vs. Marina drill-in with per-warehouse tabs) and "new sale" entry was implemented differently in Marina's view vs. sellers' view. Each fork carried its own bugs and drifted independently.
+- Cross-references from Lesson 13 to Lesson 1 (monoliths hide forks) and Lesson 7 (agent must flag structural drift pre-implementation).
+
+Process.
+
+- Lesson addition per `GOVERNANCE.md` — observed real failure, severity high, no Writer/Reviewer required.
+
 ## v1.2.1 — 2026-05-03
 
 Added.
