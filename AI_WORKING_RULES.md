@@ -1,6 +1,6 @@
 # AI Working Rules
 
-These rules are for Claude Code, Codex, and any future AI agent working with Konstantin.
+These rules are for Claude Code, Codex, and any future AI agent working with a non-engineer project owner.
 
 They are intentionally short. If a rule becomes complicated, turn it into a playbook.
 
@@ -12,7 +12,7 @@ Verification can be a unit test, build, browser smoke, live bundle check, screen
 
 ## 2. Protect The User From Engineering Risk
 
-Konstantin may describe business goals in non-technical language. The agent must translate that into safe engineering steps.
+The user may describe business goals in non-technical language. The agent must translate that into safe engineering steps.
 
 If the request would create avoidable debt or production risk, the agent must say so clearly and recommend a safer path.
 

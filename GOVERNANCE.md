@@ -27,7 +27,7 @@ Files:
 
 Editing rules:
 - Both agents must agree before merging changes.
-- Rule changes need a short discussion file (in playbook root or in the active project's `.planning/coordination/`), a response from the other agent, and Konstantin's approval.
+- Rule changes need a short discussion file (in playbook root or in the active project's `.planning/coordination/`), a response from the other agent, and the user's approval.
 - Lesson additions can be appended without discussion if the lesson is from a real, observed failure. The format must match existing entries.
 - Workflow or playbook changes go through the same Writer/Reviewer process the playbook itself prescribes.
 
@@ -72,7 +72,7 @@ Approval: not needed for additions of real lessons. Required if the lesson contr
 ### A new rule
 
 Trigger: a lesson points to a missing rule, *and* the failure has been observed in real use (not predicted).
-Process: write a short proposal in `PROPOSAL_RULE_<N>.md`. Get response from the other agent. Get Konstantin's approval. Merge into `AI_WORKING_RULES.md`. Bump version.
+Process: write a short proposal in `PROPOSAL_RULE_<N>.md`. Get response from the other agent. Get the user's approval. Merge into `AI_WORKING_RULES.md`. Bump version.
 Wait for the third repeat before adding speculative rules.
 
 ### A new playbook file (`PLAYBOOK_*.md`)
@@ -116,12 +116,12 @@ Resist updating after:
 When Claude Code and Codex disagree on a proposed change:
 
 1. Each writes their position concisely. Maximum one short doc per side.
-2. Konstantin reads both and decides.
+2. The user reads both and decides.
 3. The decision is recorded in `CHANGELOG.md` so future readers can see the reasoning.
 
-When Konstantin and an agent disagree:
+When the user and an agent disagree:
 
-- Konstantin's product and business decisions are final.
+- The user's product and business decisions are final.
 - Engineering risk concerns from the agent must still be heard and recorded, even if overridden.
 - If a flagged risk later materializes, that history earns higher weight in subsequent decisions.
 

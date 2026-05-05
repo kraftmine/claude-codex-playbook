@@ -70,6 +70,8 @@ The agent should decide when to checkpoint, test, smoke check, write a decision 
 
 ## Minimal Project Activation Checklist
 
+When activating the playbook in a project, treat activation as its own scoped task. Start with `git status --short`. If the working tree is dirty, first classify the existing changes by provenance: pre-existing user work, prior agent work, generated artifacts, activation files, and substantive code. Commit activation files separately when safe, or write an activation note explaining why the tree cannot be cleanly committed yet. Do not mix activation files with substantive code changes.
+
 Before meaningful work in a project:
 
 1. Check `git status --short`.

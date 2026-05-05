@@ -1,4 +1,4 @@
-# Workflow: Konstantin + Claude Code + Codex
+# Workflow: The User + Claude Code + Codex
 
 This is the practical collaboration model.
 
@@ -6,7 +6,7 @@ The goal is not hierarchy. Claude Code and Codex work as peers with different st
 
 ## Roles
 
-## Konstantin
+## The User
 
 Owns:
 
@@ -106,6 +106,16 @@ Good default:
 - Claude Code reviews plans and architecture.
 - Codex implements, verifies, deploys, and reports.
 
+### Pre-Work Handoff (medium/high risk)
+
+For planned medium/high-risk work, Writer creates a short handoff before substantive implementation begins: goal, risk classification, likely files, expected verification, and deploy expectation. Reviewer acknowledges or pushes back before work starts.
+
+Exception: urgent production hotfixes may proceed immediately, but Writer must record the reason and request retrospective review before the checkpoint/deploy is considered closed.
+
+### Activation As Its Own Task
+
+When activating the playbook in a new project, treat activation itself as a scoped task — separate from any substantive code work the user requested. See `HOW_TO_USE.md` ("Minimal Project Activation Checklist") for the full procedure.
+
 ## Handoff Contract
 
 When Claude Code hands work to Codex, the handoff should include:
@@ -125,11 +135,11 @@ When Codex reports back, the report should include:
 - whether it was deployed
 - backup/rollback point
 - unresolved risks
-- what Konstantin should manually test, if anything
+- what the user should manually test, if anything
 
 ## New Feature Discovery
 
-For larger features, Claude Code should interview Konstantin before writing a spec.
+For larger features, Claude Code should interview the user before writing a spec.
 
 The interview should focus on non-obvious questions:
 

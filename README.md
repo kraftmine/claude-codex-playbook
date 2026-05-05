@@ -2,9 +2,11 @@
 
 A small, opinionated playbook for working with Claude Code and Codex as paired coding agents — without drifting into kitchen-sink monoliths, untracked git work, or methodology bloat.
 
-**Status:** v1.1.0 — `2026-05-03`. Authored from the lessons of a real production refactor (Wild Kamchatka dashboard). To be revised after real-use feedback. See [`CHANGELOG.md`](CHANGELOG.md) for history and [`GOVERNANCE.md`](GOVERNANCE.md) for how this playbook changes.
+**Status:** v1.2.0 — `2026-05-03`. Authored from the lessons of a real production refactor (Wild Kamchatka dashboard). To be revised after real-use feedback. See [`CHANGELOG.md`](CHANGELOG.md) for history and [`GOVERNANCE.md`](GOVERNANCE.md) for how this playbook changes.
 
-**Author:** [Konstantin Gordon](https://github.com/kraftmine), with synthesis from Claude Code (Anthropic) and Codex (OpenAI).
+**Author:** [@kraftmine](https://github.com/kraftmine), with synthesis from Claude Code (Anthropic) and Codex (OpenAI).
+
+This playbook is generic. It was developed during a real production project (the Wild Kamchatka operations dashboard), but the rules apply to any non-engineer founder pairing Claude Code with Codex. Throughout the documents, "the user" or "the project owner" refers to the human directing the work.
 
 ## What This Is
 
@@ -29,7 +31,7 @@ The playbook is operational discipline, not methodology. It scales process to ta
 
 ## Core Principle
 
-Konstantin owns product intent and business priorities.
+The user owns product intent and business priorities.
 
 Claude Code and Codex own engineering risk detection, architecture pushback, verification discipline, and clear explanations.
 
@@ -52,7 +54,7 @@ Process scales with risk. Low-risk tasks stay fast.
 - **Claude Code** — orchestrator, planner, architect, reviewer.
 - **Codex** — builder, debugger, verifier, shipper.
 - Both agents are **peers**, not boss/subordinate. Either can challenge a plan when code reality or product risk demands it.
-- **Konstantin** — product owner, not engineering dispatcher.
+- **The user** — product owner, not engineering dispatcher.
 
 This split is directly modeled on Anthropic's [orchestrator-workers pattern](https://www.anthropic.com/research/building-effective-agents).
 
@@ -87,7 +89,7 @@ This split is directly modeled on Anthropic's [orchestrator-workers pattern](htt
 
 **If you forked this for your own context** — start with `AI_WORKING_RULES.md`, `WORKFLOW.md`, and `LESSONS_FROM_WK.md`. Keep what fits, drop what doesn't. Most reusable: the risk-based scaling model, the named lessons (mostly universal), the handoff contract, the CLAUDE.md size discipline.
 
-**Wild Kamchatka users** — this playbook was first activated on the WK dashboard. After three real uses, we run a retrospective: what prevented a mistake, what slowed work down, what repeated enough to deserve a hook or skill.
+**If you used this playbook in a real project** — after three real uses, run a retrospective: what prevented a mistake, what slowed work down, what repeated enough to deserve a hook or skill. Feed durable findings back into a proposal for the next version (see [`GOVERNANCE.md`](GOVERNANCE.md)).
 
 ## Open Questions
 
